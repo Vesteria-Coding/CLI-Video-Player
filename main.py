@@ -70,6 +70,8 @@ def PlayVideoAscii(VideoPath):
         if SleepTime > 0:
             time.sleep(SleepTime)
     Cap.release()
+    for _ in range(TermHeight):
+        print("\033[F\033[K", end="")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
