@@ -7,7 +7,8 @@ Run these commands to install and run CLI-Video-Player:
 git clone https://github.com/Vesteroa-Coding/CLI-Video-Player.git
 cd CLI-Video-Player
 pip install -r requirements.txt
-python main.py /Path/To/MP4/```
+python main.py /Path/To/MP4/
+```
 
 ### CLI-Video-Player
 This is tested on both windows and linux.
