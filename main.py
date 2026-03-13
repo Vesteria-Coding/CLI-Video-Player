@@ -1,3 +1,4 @@
+import os
 import cv2
 import sys
 import time
@@ -7,6 +8,10 @@ import numpy as np
 
 BLOCK = '▀'
 RESET = "\033[0m"
+
+def ClearConsole():
+    time.sleep(0.1)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def RGB(R, G, B):
     return f"\033[48;2;{R};{G};{B}m"
@@ -70,8 +75,7 @@ def PlayVideoAscii(VideoPath):
         if SleepTime > 0:
             time.sleep(SleepTime)
     Cap.release()
-    for _ in range(TermHeight):
-        print("\033[F\033[K", end="")
+    ClearConsole()
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -79,4 +83,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     VideoPath = sys.argv[1]
-    PlayVideoAscii(VideoPath)
+    try:
+        PlayVideoAscii(VideoPath)
+    except KeyboardInterrupt:
+        ClearConsole()
