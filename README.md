@@ -11,4 +11,4 @@ python3 main.py /Path/To/MP4/
 ```
 
 ### CLI-Video-Player
-This is tested on both windows and linux (unknown about mac, should work in theory).
+This is tested on both windows and linux (does not work on mac).
